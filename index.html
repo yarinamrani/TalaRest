@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>טאלה — מטבח תאילנדי | Tala Thai Kitchen</title>
+<meta name="description" content="התפריט של טאלה — מטבח תאילנדי כשר. ראשונות, עיקריות, קארי, פאד תאי ועוד.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16263f;
+    --navy-soft:#1f3252;
+    --gold:#c6a35c;
+    --gold-soft:#d8bd86;
+    --cream:#f7f3ea;
+    --paper:#fffdf8;
+    --ink:#24211c;
+    --muted:#7c7468;
+    --line:#e7ddc9;
+    --shadow:0 18px 40px -22px rgba(22,38,63,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Heebo',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Frank Ruhl Libre',serif;font-weight:700;line-height:1.2}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:#d7c3aa;
+    color:var(--navy);
+    text-align:center;
+    padding:26px 20px 38px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .logo{
+    width:min(380px,76vw);height:auto;display:block;margin:0 auto;
+  }
+  .brand-he{
+    font-family:'Frank Ruhl Libre',serif;
+    font-size:clamp(17px,4.6vw,24px);
+    color:var(--navy);
+    margin-top:-6px;
+    font-weight:500;
+  }
+  .tagline{color:#6b5d42;font-size:14px;margin-top:6px;font-weight:400;letter-spacing:.04em}
+
+  /* ---------- Category nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(247,243,234,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;
+    display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+    padding:14px 16px;
+  }
+  nav a{
+    text-decoration:none;color:var(--navy);
+    font-weight:500;font-size:15px;
+    padding:7px 18px;border-radius:999px;
+    border:1px solid transparent;transition:.2s;
+  }
+  nav a:hover{background:#fff;border-color:var(--line)}
+
+  /* ---------- Layout ---------- */
+  main{max-width:1080px;margin:0 auto;padding:46px 18px 80px}
+  .cat-head{text-align:center;margin:30px 0 8px}
+  .cat-head h2{
+    font-size:clamp(26px,6vw,36px);color:var(--navy);
+    display:inline-block;position:relative;padding:0 10px;
+  }
+  .cat-head .en{
+    display:block;font-family:'Cormorant Garamond',serif;
+    letter-spacing:.3em;color:var(--gold);font-size:14px;
+    font-weight:600;margin-top:4px;padding-inline-start:.3em;
+  }
+  .addon{
+    text-align:center;color:var(--muted);font-size:14px;
+    background:#fff;border:1px dashed var(--line);border-radius:12px;
+    padding:10px 16px;max-width:640px;margin:16px auto 4px;
+  }
+
+  /* ---------- Grid + cards ---------- */
+  .grid{
+    display:grid;gap:22px;margin-top:26px;
+    grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  }
+  .card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;transition:.25s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -24px rgba(22,38,63,.55)}
+  .ph{position:relative;aspect-ratio:4/3;background:#ece4d3;overflow:hidden}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .noimg{
+    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:6px;color:#a99e87;
+    background:repeating-linear-gradient(45deg,#efe7d6,#efe7d6 12px,#ece3d0 12px,#ece3d0 24px);
+  }
+  .noimg span{font-size:34px}
+  .noimg small{font-size:12px;letter-spacing:.05em}
+  .badge{
+    position:absolute;top:10px;inset-inline-start:10px;
+    background:rgba(22,38,63,.86);color:#fff;font-size:12px;font-weight:500;
+    padding:4px 11px;border-radius:999px;backdrop-filter:blur(4px);
+  }
+  .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .name{font-family:'Frank Ruhl Libre',serif;font-size:20px;font-weight:700;color:var(--navy)}
+  .name .en{display:block;font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold);font-weight:600;letter-spacing:.02em}
+  .price{
+    font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:19px;
+    color:var(--navy);white-space:nowrap;
+  }
+  .desc{color:var(--muted);font-size:14.5px;margin-top:10px;font-weight:300}
+  .tags{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
+  .tag{font-size:12px;font-weight:500;padding:3px 10px;border-radius:999px}
+  .tag.spicy{background:#fbe9e6;color:#c0392b}
+  .tag.gf{background:#e9f3ea;color:#3a7d44}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy);color:#c8d0dd;text-align:center;
+    padding:34px 20px;font-size:13.5px;font-weight:300;
+  }
+  footer .gold{color:var(--gold-soft);letter-spacing:.3em;font-family:'Cormorant Garamond',serif;font-size:18px}
+  footer a{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="images/tala-logo.png" alt="טאלה — מטבח תאילנדי כשר · Tala Thai Kitchen">
+  <div class="brand-he">מטבח תאילנדי כשר</div>
+  <p class="tagline">תפריט · ראשונות &amp; עיקריות</p>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#starters">ראשונות</a>
+    <a href="#mains">עיקריות</a>
+  </div>
+</nav>
+
+<main id="app">
+  <p style="text-align:center;color:var(--muted)">טוען תפריט…</p>
+</main>
+
+<footer>
+  <div class="gold">TALA</div>
+  <p style="margin-top:8px">מטבח תאילנדי כשר · המחירים בש"ח (₪)</p>
+  <p style="margin-top:4px;opacity:.8">תוספת חלבון לעיקריות: עוף 15 ₪ / בקר 18 ₪ / טופו 18 ₪</p>
+</footer>
+
+<script>
+const MENU = {
+  "restaurant": {
+    "name_en": "Tala Thai Kitchen",
+    "name_he": "טאלה - מטבח תאילנדי",
+    "kosher": true,
+    "currency": "ILS",
+    "currency_symbol": "₪",
+    "source": "Tala Thai Kitchen menu PDF (starters & mains). Page 3 holds 2 desserts and is intentionally not included here.",
+    "notes": [
+      "Protein add-on for main dishes: chicken +15₪ / beef +18₪ / tofu +18₪ (תוספת חלבון לבחירה)."
+    ]
+  },
+  "categories": [
+    {
+      "id": "starters",
+      "name_he": "ראשונות",
+      "name_en": "Starters",
+      "items": [
+        {
+          "id": "som-tum",
+          "name_he": "סלט פאפאיה",
+          "name_en": "Papaya Salad (Som Tum)",
+          "description_he": "פאפאיה ירוקה, גזר, עגבניות שרי, שום וצ'ילי ברוטב תאילנדי מסורתי. לבחירה: חריף / חריף מאוד.",
+          "description_en": "Green papaya, carrot, cherry tomatoes, garlic and chili in a traditional Thai dressing. Choice of: spicy / very spicy.",
+          "price": 54,
+          "spicy": true,
+          "image": "images/som-tum-papaya-salad.jpg"
+        },
+        {
+          "id": "pomelo-mango-fish",
+          "name_he": "סלט פומלה / מנגו בעונה ודג מטוגן",
+          "name_en": "Pomelo / Seasonal Mango Salad with Fried Fish",
+          "description_he": "פומלה טרייה או מנגו בעונה, עשבי תיבול, בצל סגול, קשיו ודג בטמפורה.",
+          "description_en": "Fresh pomelo or seasonal mango, fresh herbs, red onion, cashews and tempura fish.",
+          "price": 68,
+          "spicy": false,
+          "image": "images/pomelo-mango-fish-salad.jpg"
+        },
+        {
+          "id": "nam-tok-beef",
+          "name_he": "נאם טוק בקר",
+          "name_en": "Nam Tok Beef Salad",
+          "description_he": "פרוסות שייטל צרובות, עשבי תיבול, בצל סגול, צ'ילי קלוי, ליים וסויה. מוגש בליווי סטיקי רייס.",
+          "description_en": "Seared sirloin slices, fresh herbs, red onion, roasted chili, lime and soy. Served with sticky rice.",
+          "price": 74,
+          "spicy": true,
+          "image": "images/nam-tok-beef.jpg"
+        },
+        {
+          "id": "thai-spring-roll",
+          "name_he": "אגרול תאילנדי",
+          "name_en": "Thai Spring Rolls",
+          "description_he": "רול פריך במילוי כרוב, גזר, סלרי, נבטים ואטריות זכוכית. בליווי רוטב חמוץ-מתוק.",
+          "description_en": "Crispy roll filled with cabbage, carrot, celery, sprouts and glass noodles. Served with sweet-and-sour sauce.",
+          "price": 46,
+          "spicy": false,
+          "image": "images/thai-spring-rolls.jpg"
+        },
+        {
+          "id": "miang-kham-salmon",
+          "name_he": "מיאנג קאם סלמון נא",
+          "name_en": "Miang Kham Raw Salmon",
+          "description_he": "סלמון נא עם בצל ירוק, בצל אדום, אטריות שעועית, עשבי תיבול וליים. בליווי רוטב בוטנים, על מצע חסה אייסברג.",
+          "description_en": "Raw salmon with green onion, red onion, bean noodles, fresh herbs and lime. With peanut sauce, on a bed of iceberg lettuce.",
+          "price": 58,
+          "spicy": false,
+          "image": null
+        },
+        {
+          "id": "glass-noodle-salad",
+          "name_he": "סלט אטריות שעועית",
+          "name_en": "Glass Noodle Salad (Yum Woon Sen)",
+          "description_he": "אטריות שעועית, עלי סלרי, נענע, בצל סגול, עגבנייה, גזר ומלפפון, רוטב חריף-חמוץ-מתוק.",
+          "description_en": "Glass (bean) noodles, celery leaves, mint, red onion, tomato, carrot and cucumber, in a spicy-sour-sweet sauce.",
+          "price": 62,
+          "spicy": true,
+          "image": "images/glass-noodle-salad.jpg"
+        },
+        {
+          "id": "chicken-satay",
+          "name_he": "צ'יקן סאטה",
+          "name_en": "Chicken Satay",
+          "description_he": "ארבעה שיפודי פרגית על מצע עלי חסה, בליווי רוטב בוטנים ובצל מוחמץ בצד.",
+          "description_en": "Four chicken thigh skewers on a bed of lettuce, with peanut sauce and pickled onion on the side.",
+          "price": 58,
+          "spicy": false,
+          "image": "images/chicken-satay.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "name_he": "עיקריות",
+      "name_en": "Mains",
+      "protein_addon_he": "תוספת חלבון לבחירה: עוף 15 ₪ / בקר 18 ₪ / טופו 18 ₪.",
+      "protein_addon_en": "Protein add-on of choice: chicken +15₪ / beef +18₪ / tofu +18₪.",
+      "items": [
+        {
+          "id": "pad-thai",
+          "name_he": "פאד תאי",
+          "name_en": "Pad Thai",
+          "description_he": "אטריות אורז מוקפצות עם ביצה, גזר, כרוב לבן, נבטים, בצל ירוק, בוטנים, צ'ילי יבש גרוס וליים. קיימת אופציה ללא גלוטן.",
+          "description_en": "Stir-fried rice noodles with egg, carrot, white cabbage, sprouts, green onion, peanuts, ground dried chili and lime. Gluten-free option available.",
+          "price": 68,
+          "spicy": false,
+          "gluten_free_option": true,
+          "image": "images/pad-thai.jpg"
+        },
+        {
+          "id": "pad-krapow",
+          "name_he": "פאד קפאו",
+          "name_en": "Pad Krapow",
+          "description_he": "בשר טחון מוקפץ עם בזיליקום תאילנדי, בצל סגול, שעועית ירוקה, שום וצ'ילי. בליווי אורז יסמין וביצת עין.",
+          "description_en": "Stir-fried minced meat with Thai basil, red onion, green beans, garlic and chili. Served with jasmine rice and a fried egg.",
+          "price": 84,
+          "spicy": true,
+          "image": "images/pad-krapow.jpg"
+        },
+        {
+          "id": "cashew-stir-fry",
+          "name_he": "מוקפץ קשיו",
+          "name_en": "Cashew Stir-Fry",
+          "description_he": "פלפלים צבעוניים, בצל לבן, בצל ירוק, שום וקשיו קלוי, ברוטב חמוץ-מתוק.",
+          "description_en": "Bell peppers, white onion, green onion, garlic and roasted cashews, in a sweet-and-sour sauce.",
+          "price": 78,
+          "spicy": false,
+          "image": "images/cashew-stir-fry.jpg"
+        },
+        {
+          "id": "green-curry",
+          "name_he": "קארי ירוק",
+          "name_en": "Green Curry",
+          "description_he": "חלב קוקוס, חציל תאילנדי, בזיליקום ועשבי תיבול.",
+          "description_en": "Coconut milk, Thai eggplant, basil and fresh herbs.",
+          "price": 74,
+          "spicy": true,
+          "image": null
+        },
+        {
+          "id": "red-curry",
+          "name_he": "קארי אדום",
+          "name_en": "Red Curry",
+          "description_he": "קארי תאילנדי אדום, חלב קוקוס, ירקות טריים.",
+          "description_en": "Thai red curry, coconut milk, fresh vegetables.",
+          "price": 74,
+          "spicy": true,
+          "image": "images/red-curry.jpg"
+        },
+        {
+          "id": "khao-pad",
+          "name_he": "קאו פאד",
+          "name_en": "Khao Pad (Thai Fried Rice)",
+          "description_he": "אורז מוקפץ בסגנון תאילנדי, ירקות, ביצה ובצל ירוק.",
+          "description_en": "Thai-style fried rice, vegetables, egg and green onion.",
+          "price": 66,
+          "spicy": false,
+          "image": "images/thai-fried-rice.jpg"
+        },
+        {
+          "id": "fried-egg-noodles",
+          "name_he": "אטריות ביצים מוקפצות",
+          "name_en": "Stir-Fried Egg Noodles",
+          "description_he": "אטריות ביצים מוקפצות עם כרוב, גזר, פטריות ובצל ירוק ברוטב סויה מתקתק.",
+          "description_en": "Stir-fried egg noodles with cabbage, carrot, mushrooms and green onion in sweet soy sauce.",
+          "price": 68,
+          "spicy": false,
+          "image": null
+        },
+        {
+          "id": "tom-yam",
+          "name_he": "מרק טום יאם",
+          "name_en": "Tom Yam Soup",
+          "description_he": "מרק תאילנדי חריף-חמצמץ, למון גראס, פטריות, ליים וצ'ילי.",
+          "description_en": "Spicy-and-sour Thai soup, lemongrass, mushrooms, lime and chili.",
+          "price": 62,
+          "spicy": true,
+          "image": null
+        }
+      ]
+    }
+  ]
+};
+
+function dishCard(item){
+  const img = item.image
+    ? `<img src="${item.image}" alt="${item.name_he}" loading="lazy">`
+    : `<div class="noimg"><span>🍽️</span><small>אין תמונה</small></div>`;
+  const badge = item.spicy ? `<div class="badge">🌶️ חריף</div>` : "";
+  const tags = [];
+  if(item.spicy) tags.push(`<span class="tag spicy">חריף</span>`);
+  if(item.gluten_free_option) tags.push(`<span class="tag gf">אופציה ללא גלוטן</span>`);
+  return `
+  <article class="card">
+    <div class="ph">${img}${badge}</div>
+    <div class="body">
+      <div class="row">
+        <div class="name">${item.name_he}<span class="en">${item.name_en}</span></div>
+        <div class="price">${item.price} ₪</div>
+      </div>
+      <p class="desc">${item.description_he}</p>
+      ${tags.length ? `<div class="tags">${tags.join("")}</div>` : ""}
+    </div>
+  </article>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = MENU.categories.map(cat => `
+    <section id="${cat.id}">
+      <div class="cat-head">
+        <h2>${cat.name_he}<span class="en">${cat.name_en}</span></h2>
+      </div>
+      ${cat.protein_addon_he ? `<p class="addon">${cat.protein_addon_he}</p>` : ""}
+      <div class="grid">${cat.items.map(dishCard).join("")}</div>
+    </section>
+  `).join("");
+}
+render();
+</script>
+</body>
+</html>
