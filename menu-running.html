@@ -19,7 +19,8 @@
   .brand{text-align:center;margin-bottom:14px}
   .brand img{width:96px;height:auto;display:inline-block}
 
-  .title{font-weight:700;font-size:13.5pt;margin:2px 0 10px}
+  .title{font-weight:700;font-size:13.5pt;margin:2px 0 2px}
+  .subtitle{font-weight:700;font-size:12pt;margin:0 0 10px}
   .cat{font-weight:700;font-size:13pt;margin:18px 0 7px}
 
   .addon{font-weight:400;font-size:10.5pt;margin:0 0 8px}
@@ -56,6 +57,7 @@ function dish(it){
 const M=window.MENU;
 let h=`<div class="brand"><img src="images/tala-logo.png" alt="Tala"></div>`;
 h+=`<div class="title">טאלה — מטבח תאילנדי כשר | Tala Thai Kitchen</div>`;
+h+=`<div class="subtitle">תפריט הרצה</div>`;
 
 for(const cat of M.categories){
   h+=`<div class="cat">${cat.name_he} | ${cat.name_en}</div>`;
