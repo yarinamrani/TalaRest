@@ -39,5 +39,4 @@ Each photo was matched to the written menu item it shows:
 
 - Prices are in ILS (₪).
 - Mains offer a protein add-on: chicken +15₪ / beef +18₪ / tofu +18₪.
-- The source PDF is page **"2 of 3"** — page 3 (likely desserts/drinks) was not
-  provided, so it is not included here.
+- The dessert page (2 desserts) is intentionally not included.

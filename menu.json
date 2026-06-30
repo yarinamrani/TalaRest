@@ -5,9 +5,8 @@
     "kosher": true,
     "currency": "ILS",
     "currency_symbol": "₪",
-    "source": "Tala Thai Kitchen menu PDF (pages 1-2 of 3)",
+    "source": "Tala Thai Kitchen menu PDF (starters & mains). Page 3 holds 2 desserts and is intentionally not included here.",
     "notes": [
-      "Page 3 of 3 of the source PDF was not provided (likely desserts/drinks).",
       "Protein add-on for main dishes: chicken +15₪ / beef +18₪ / tofu +18₪ (תוספת חלבון לבחירה)."
     ]
   },
