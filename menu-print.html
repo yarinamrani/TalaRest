@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>טאלה — תפריט להדפסה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700;900&family=Heebo:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16263f; --gold:#b6914f; --ink:#2a261f; --muted:#6f6757; --line:#e0d6c2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Heebo',sans-serif;color:var(--ink);line-height:1.5;background:#fff}
+  .page{max-width:820px;margin:0 auto;padding:0 26px}
+
+  /* header */
+  header{text-align:center;padding:18px 0 10px}
+  header img{width:160px;height:auto;display:block;margin:0 auto 6px}
+  header .he{font-family:'Frank Ruhl Libre',serif;font-size:18px;color:var(--navy);font-weight:600}
+  header .rule{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold);font-size:11px;margin:10px auto 0;max-width:300px}
+  header .rule span{height:1px;flex:1;background:var(--line)}
+
+  /* section titles */
+  h2.cat{
+    font-family:'Frank Ruhl Libre',serif;font-size:24px;color:var(--navy);text-align:center;
+    margin:22px 0 2px;font-weight:700;
+  }
+  h2.cat .en{display:block;font-family:'Cormorant Garamond',serif;letter-spacing:.3em;
+    color:var(--gold);font-size:12px;font-weight:600;margin-top:1px;padding-inline-start:.3em}
+  .addon{text-align:center;color:var(--muted);font-size:12.5px;margin:8px auto 4px;
+    border:1px dashed var(--line);border-radius:8px;padding:5px 12px;max-width:560px}
+
+  /* food list — two columns */
+  .food{columns:2;column-gap:34px;margin-top:14px}
+  .dish{break-inside:avoid;margin-bottom:12px}
+  .dish .top{display:flex;align-items:baseline;gap:6px}
+  .dish .nm{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:15.5px;color:var(--navy)}
+  .dish .nm .en{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:12px;color:var(--gold);margin-inline-start:6px}
+  .dish .lead{flex:1;border-bottom:1px dotted #cdbfa6;transform:translateY(-3px)}
+  .dish .pr{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:14.5px;color:var(--navy);white-space:nowrap}
+  .dish .ds{color:var(--muted);font-size:12.5px;margin-top:2px;font-weight:300}
+  .chili{color:#c0392b;font-size:11px;font-weight:600}
+  .gf{color:#3a7d44;font-size:11px;font-weight:600}
+
+  /* drinks */
+  .drinks-title{text-align:center;margin:26px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+  .dsec{margin-top:14px}
+  .dsec h3{font-family:'Frank Ruhl Libre',serif;font-size:18px;color:var(--navy);text-align:center;font-weight:700}
+  .dsec h3 .en{display:block;font-family:'Cormorant Garamond',serif;letter-spacing:.26em;color:var(--gold);font-size:11px;font-weight:600;padding-inline-start:.26em}
+  .dcols{columns:2;column-gap:34px;margin-top:10px}
+  .dgroup{break-inside:avoid;margin-bottom:12px}
+  .dgrp{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:13.5px;font-weight:700;
+    border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:5px;display:flex;justify-content:space-between;align-items:baseline}
+  .dgrp .en{font-family:'Cormorant Garamond',serif;letter-spacing:.1em;font-size:10.5px;color:var(--muted);font-weight:600}
+  .dline{display:flex;align-items:baseline;gap:5px;padding:1.5px 0;font-size:13.5px}
+  .dname{color:var(--ink)}
+  .ddot{flex:1;border-bottom:1px dotted #d2c5ac;transform:translateY(-3px)}
+  .dprice{color:var(--navy);font-weight:600;font-family:'Frank Ruhl Libre',serif}
+  .cs2{display:flex;gap:12px}
+  .cs2 span{min-width:26px;text-align:center;color:var(--navy);font-weight:600;font-family:'Frank Ruhl Libre',serif}
+  .cshead{display:flex;gap:12px;color:var(--muted);font-size:10.5px;margin:2px 0 -2px;justify-content:flex-start}
+  .cshead span:first-child{flex:1}
+  .cshead span{min-width:26px;text-align:center}
+
+  footer{text-align:center;color:var(--muted);font-size:11.5px;margin:22px 0 12px;padding-top:12px;border-top:1px solid var(--line)}
+  footer .gold{font-family:'Cormorant Garamond',serif;color:var(--gold);letter-spacing:.3em;font-size:15px}
+
+  @page{ size:A4; margin:11mm }
+  @media print{ .cat,.dsec,.dgroup,.dish{break-inside:avoid} }
+</style>
+</head>
+<body>
+<div class="page" id="page">טוען…</div>
+<script src="menu-data.js"></script>
+<script>
+function chili(){return '<span class="chili">🌶️ חריף</span>'}
+function dishHTML(it){
+  const tags=[];
+  if(it.spicy) tags.push(chili());
+  if(it.gluten_free_option) tags.push('<span class="gf">ללא גלוטן</span>');
+  return `<div class="dish">
+    <div class="top">
+      <span class="nm">${it.name_he}<span class="en">${it.name_en}</span></span>
+      <span class="lead"></span>
+      <span class="pr">${it.price} ₪</span>
+    </div>
+    <div class="ds">${it.description_he}${tags.length?' · '+tags.join(' '):''}</div>
+  </div>`;
+}
+function priceRow(it){return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div>`}
+function csRow(it){const c=it.chaser!=null?it.chaser:'';const s=it.serve!=null?it.serve:(it.price!=null?it.price:'');return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="cs2"><span>${c}</span><span>${s}</span></span></div>`}
+function dgroup(g,type){const head=g.label_he?`<div class="dgrp">${g.label_he}${g.label_en?`<span class="en">${g.label_en}</span>`:''}</div>`:'';return `<div class="dgroup">${head}${g.items.map(type==='chaser_serve'?csRow:priceRow).join('')}</div>`}
+
+const M=window.MENU;
+let html=`
+<header>
+  <img src="images/tala-logo.png" alt="Tala">
+  <div class="he">מטבח תאילנדי כשר</div>
+  <div class="rule"><span></span>✦<span></span></div>
+</header>`;
+
+for(const cat of M.categories){
+  html+=`<h2 class="cat">${cat.name_he}<span class="en">${cat.name_en}</span></h2>`;
+  if(cat.protein_addon_he) html+=`<div class="addon">${cat.protein_addon_he}</div>`;
+  html+=`<div class="food">${cat.items.map(dishHTML).join('')}</div>`;
+}
+
+const D=M.drinks;
+html+=`<div class="drinks-title"><h2 class="cat">${D.name_he}<span class="en">${D.name_en}</span></h2></div>`;
+for(const sec of D.sections){
+  html+=`<div class="dsec"><h3>${sec.name_he}<span class="en">${sec.name_en}</span></h3>`;
+  if(sec.type==='chaser_serve') html+=`<div class="cshead"><span></span><span>צ׳ייסר</span><span>מנה</span></div>`;
+  html+=`<div class="dcols">${sec.groups.map(g=>dgroup(g,sec.type)).join('')}</div></div>`;
+}
+
+html+=`<footer><div class="gold">TALA</div>המחירים בש"ח (₪) · כשר</footer>`;
+document.getElementById('page').innerHTML=html;
+</script>
+</body>
+</html>

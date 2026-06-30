@@ -12,7 +12,9 @@ matched to its menu item.
 | `menu-data.js` | Menu data loaded by the page (`window.MENU`), generated from `menu.json`. |
 | `menu.json` | Machine-readable menu (bilingual HE/EN, prices, descriptions, image links, drinks). |
 | `MENU.md` | Human-readable menu (food + drinks). |
-| `Tala-Menu.pdf` | Printable A4 PDF of the full menu (food + drinks). |
+| `Tala-Menu.pdf` | Illustrated A4 PDF of the full menu (with dish photos). |
+| `menu-print.html` | Text-only print layout (no dish photos). |
+| `Tala-Menu-Print.pdf` | Text-only A4 PDF for printing customer menus. |
 | `images/` | Dish photos + logo. |
 
 ## Photo ↔ dish matching
