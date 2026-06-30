@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>טאלה — תפריט רץ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Calibri','Assistant',Arial,sans-serif;
+    color:#000;background:#fff;line-height:1.35;
+  }
+  .page{max-width:720px;margin:0 auto;padding:24px 30px 30px}
+
+  header{text-align:center;margin-bottom:6px}
+  header img{width:120px;height:auto;display:block;margin:0 auto 4px}
+  .head-sub{font-size:14px;color:#222;font-weight:600}
+
+  h2.sec{
+    text-align:center;font-size:21px;font-weight:700;color:#111;
+    margin:20px 0 2px;
+  }
+  h2.sec .en{display:block;font-size:12px;font-weight:600;color:#7a6a44;letter-spacing:.18em;margin-top:1px}
+  .addon{text-align:center;font-size:13px;color:#444;margin:6px 0 2px}
+
+  .dish{text-align:center;margin:11px 0}
+  .dish .nm{font-weight:700;font-size:16px;color:#000}
+  .dish .pr{font-weight:700;font-size:16px;color:#000;white-space:nowrap}
+  .dish .ing{font-size:13.5px;color:#2b2b2b;font-weight:400;margin-top:1px}
+  .dish .chili{color:#b5301f;font-weight:600}
+
+  /* drinks: compact centered list, two columns */
+  .dcols{columns:2;column-gap:40px;margin-top:8px}
+  .dgroup{break-inside:avoid;margin-bottom:10px;text-align:center}
+  .dgrp{font-weight:700;font-size:14px;color:#7a6a44;margin-bottom:3px}
+  .drow{font-size:13.5px;color:#000;padding:1px 0}
+  .drow b{font-weight:700}
+
+  hr{border:none;border-top:1px solid #d9d2c2;margin:18px 0}
+  footer{text-align:center;font-size:12px;color:#555;margin-top:20px}
+
+  @page{ size:A4; margin:13mm }
+  @media print{ .dish,.dgroup,h2.sec{break-inside:avoid} }
+</style>
+</head>
+<body>
+<div class="page" id="page">…</div>
+<script src="menu-data.js"></script>
+<script>
+function ingFmt(desc){
+  return String(desc).replace(/\s*\.\s*$/,'').replace(/\s*,\s*/g,' | ');
+}
+function dish(it){
+  const chili = it.spicy ? ' <span class="chili">חריף</span>' : '';
+  const gf = it.gluten_free_option ? ' | ללא גלוטן' : '';
+  return `<div class="dish">
+    <div><span class="nm">${it.name_he}</span> <span class="pr">– ${it.price} ₪</span></div>
+    <div class="ing">${ingFmt(it.description_he)}${gf}${chili}</div>
+  </div>`;
+}
+const M=window.MENU;
+let h=`<header>
+  <img src="images/tala-logo.png" alt="Tala">
+  <div class="head-sub">מטבח תאילנדי כשר</div>
+</header>`;
+
+for(const cat of M.categories){
+  h+=`<h2 class="sec">${cat.name_he}<span class="en">${cat.name_en}</span></h2>`;
+  if(cat.protein_addon_he) h+=`<div class="addon">${cat.protein_addon_he}</div>`;
+  h+= cat.items.map(dish).join('');
+}
+
+h+=`<hr>`;
+const D=M.drinks;
+h+=`<h2 class="sec">${D.name_he}<span class="en">${D.name_en}</span></h2>`;
+for(const sec of D.sections){
+  h+=`<h2 class="sec" style="font-size:17px;margin-top:14px">${sec.name_he}</h2>`;
+  const groups = sec.groups.map(g=>{
+    const head = g.label_he?`<div class="dgrp">${g.label_he}</div>`:'';
+    const rows = g.items.map(it=>{
+      if(sec.type==='chaser_serve'){
+        const c=it.chaser!=null?it.chaser:'', s=it.serve!=null?it.serve:'';
+        return `<div class="drow">${it.name} <b>${c} / ${s} ₪</b></div>`;
+      }
+      return `<div class="drow">${it.name} <b>${it.price} ₪</b></div>`;
+    }).join('');
+    return `<div class="dgroup">${head}${rows}</div>`;
+  }).join('');
+  h+=`<div class="dcols">${groups}</div>`;
+}
+h+=`<footer>המחירים בש"ח (₪) · כשר · בשתייה חריפה: צ׳ייסר / מנה</footer>`;
+document.getElementById('page').innerHTML=h;
+</script>
+</body>
+</html>

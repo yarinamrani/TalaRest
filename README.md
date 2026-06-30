@@ -15,6 +15,8 @@ matched to its menu item.
 | `Tala-Menu.pdf` | Illustrated A4 PDF of the full menu (with dish photos). |
 | `menu-print.html` | Text-only print layout (no dish photos). |
 | `Tala-Menu-Print.pdf` | Text-only A4 PDF for printing customer menus. |
+| `menu-running.html` | "Running menu" layout — centered, Calibri-style, name–price + ingredients with `|`. |
+| `Tala-Menu-Running.pdf` | Running-menu A4 PDF (Calibri / Assistant fallback). |
 | `images/` | Dish photos + logo. |
 
 ## Photo ↔ dish matching
