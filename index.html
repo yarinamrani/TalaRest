@@ -55,7 +55,20 @@
     margin-top:-6px;
     font-weight:500;
   }
-  .tagline{color:#6b5d42;font-size:14px;margin-top:6px;font-weight:400;letter-spacing:.04em}
+  .hero-rule{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);font-size:13px;margin:14px auto 12px;max-width:260px}
+  .hero-rule span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#b69a5f)}
+  .hero-rule span:last-child{background:linear-gradient(90deg,#b69a5f,transparent)}
+  .hero-intro{color:#5d5038;font-size:clamp(14px,3.4vw,16.5px);font-weight:400;max-width:440px;margin:0 auto;line-height:1.7}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px auto 0;max-width:460px}
+  .hero-chips span{
+    background:rgba(22,38,63,.07);border:1px solid rgba(22,38,63,.14);color:var(--navy);
+    font-size:13px;font-weight:500;padding:5px 14px;border-radius:999px;
+  }
+  .hero-cta{
+    display:inline-block;margin-top:22px;background:var(--navy);color:#fff;text-decoration:none;
+    font-weight:500;font-size:15px;padding:11px 30px;border-radius:999px;transition:.2s;
+  }
+  .hero-cta:hover{background:var(--navy-soft);transform:translateY(-1px)}
 
   /* ---------- Category nav ---------- */
   nav{
@@ -110,13 +123,8 @@
   .card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -24px rgba(22,38,63,.55)}
   .ph{position:relative;aspect-ratio:4/3;background:#ece4d3;overflow:hidden}
   .ph img{width:100%;height:100%;object-fit:cover;display:block}
-  .noimg{
-    width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-    flex-direction:column;gap:6px;color:#a99e87;
-    background:repeating-linear-gradient(45deg,#efe7d6,#efe7d6 12px,#ece3d0 12px,#ece3d0 24px);
-  }
-  .noimg span{font-size:34px}
-  .noimg small{font-size:12px;letter-spacing:.05em}
+  .card.no-photo{border-top:3px solid var(--gold)}
+  .card.no-photo .body{padding-top:18px}
   .badge{
     position:absolute;top:10px;inset-inline-start:10px;
     background:rgba(22,38,63,.86);color:#fff;font-size:12px;font-weight:500;
@@ -194,7 +202,12 @@
 <header class="hero">
   <img class="logo" src="images/tala-logo.png" alt="טאלה — מטבח תאילנדי כשר · Tala Thai Kitchen">
   <div class="brand-he">מטבח תאילנדי כשר</div>
-  <p class="tagline">תפריט · ראשונות &amp; עיקריות</p>
+  <div class="hero-rule"><span></span>✦<span></span></div>
+  <p class="hero-intro">אוכל רחוב תאילנדי אותנטי — טרי, מוקפץ בּ-WOK ועשיר בטעמים.</p>
+  <div class="hero-chips">
+    <span>ראשונות</span><span>עיקריות</span><span>קארי</span><span>נודלס</span><span>שתייה</span>
+  </div>
+  <a class="hero-cta" href="#starters">לתפריט ↓</a>
 </header>
 
 <nav>
@@ -202,6 +215,7 @@
     <a href="#starters">ראשונות</a>
     <a href="#mains">עיקריות</a>
     <a href="#wine-glass">יין</a>
+    <a href="#beer">בירות</a>
     <a href="#spirits">שתייה חריפה</a>
     <a href="#bottles">בקבוקים</a>
     <a href="#soft">שתייה קלה</a>
@@ -223,16 +237,15 @@
 <script>
 
 function dishCard(item){
-  const img = item.image
-    ? `<img src="${item.image}" alt="${item.name_he}">`
-    : `<div class="noimg"><span>🍽️</span><small>אין תמונה</small></div>`;
-  const badge = item.spicy ? `<div class="badge">🌶️ חריף</div>` : "";
   const tags = [];
   if(item.spicy) tags.push(`<span class="tag spicy">חריף</span>`);
   if(item.gluten_free_option) tags.push(`<span class="tag gf">אופציה ללא גלוטן</span>`);
+  const photo = item.image
+    ? `<div class="ph"><img src="${item.image}" alt="${item.name_he}">${item.spicy?`<div class="badge">🌶️ חריף</div>`:""}</div>`
+    : "";
   return `
-  <article class="card">
-    <div class="ph">${img}${badge}</div>
+  <article class="card${item.image ? "" : " no-photo"}">
+    ${photo}
     <div class="body">
       <div class="row">
         <div class="name">${item.name_he}<span class="en">${item.name_en}</span></div>

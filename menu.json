@@ -257,6 +257,32 @@
         ]
       },
       {
+        "id": "beer",
+        "name_he": "בירות",
+        "name_en": "Beer",
+        "type": "price",
+        "groups": [
+          {
+            "label_he": "",
+            "label_en": "",
+            "items": [
+              {
+                "name": "היינקן — שליש",
+                "price": 34
+              },
+              {
+                "name": "היינקן — חצי",
+                "price": 37
+              },
+              {
+                "name": "סטלה — בקבוק",
+                "price": 36
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "spirits",
         "name_he": "שתייה חריפה",
         "name_en": "Spirits",
