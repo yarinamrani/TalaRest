@@ -354,7 +354,7 @@ const MENU = {
 
 function dishCard(item){
   const img = item.image
-    ? `<img src="${item.image}" alt="${item.name_he}" loading="lazy">`
+    ? `<img src="${item.image}" alt="${item.name_he}">`
     : `<div class="noimg"><span>🍽️</span><small>אין תמונה</small></div>`;
   const badge = item.spicy ? `<div class="badge">🌶️ חריף</div>` : "";
   const tags = [];
