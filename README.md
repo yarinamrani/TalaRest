@@ -8,9 +8,12 @@ matched to its menu item.
 
 | File | Purpose |
 | --- | --- |
-| `menu.json` | Machine-readable menu (bilingual HE/EN, prices, descriptions, image links). |
-| `MENU.md` | Human-readable menu with each dish matched to its photo. |
-| `images/` | Dish photos, named after their dish. |
+| `index.html` | Designed bilingual (HE/EN) menu web page — food + drinks. Published via GitHub Pages. |
+| `menu-data.js` | Menu data loaded by the page (`window.MENU`), generated from `menu.json`. |
+| `menu.json` | Machine-readable menu (bilingual HE/EN, prices, descriptions, image links, drinks). |
+| `MENU.md` | Human-readable menu (food + drinks). |
+| `Tala-Menu.pdf` | Printable A4 PDF of the full menu (food + drinks). |
+| `images/` | Dish photos + logo. |
 
 ## Photo ↔ dish matching
 
@@ -35,8 +38,21 @@ Each photo was matched to the written menu item it shows:
 `מיאנג קאם סלמון נא` (Miang Kham Salmon), `קארי ירוק` (Green Curry),
 `אטריות ביצים מוקפצות` (Stir-Fried Egg Noodles), `מרק טום יאם` (Tom Yam Soup).
 
+## Drinks
+
+The drinks menu is built from the restaurant's price list (Excel), grouped into
+wine by the glass, spirits (chaser / serve), bottles, and soft drinks.
+
+- **Beers are excluded** (per request, currently without beers).
+- **Non-kosher items removed:** Moët & Chandon. (Jägermeister, Chartreuse and
+  Montenegro were not in the source list.)
+- Wines and liqueurs are included as listed, confirmed by the owner.
+
 ## Notes
 
 - Prices are in ILS (₪).
 - Mains offer a protein add-on: chicken +15₪ / beef +18₪ / tofu +18₪.
 - The dessert page (2 desserts) is intentionally not included.
+- `menu-data.js` is generated from `menu.json`. After editing `menu.json`, regenerate it:
+  `node -e 'const m=require("./menu.json");require("fs").writeFileSync("menu-data.js","window.MENU = "+JSON.stringify(m,null,2)+";\n")'`
+  and rebuild the PDF from `index.html` (print to A4).

@@ -1,4 +1,4 @@
-{
+window.MENU = {
   "restaurant": {
     "name_en": "Tala Thai Kitchen",
     "name_he": "טאלה - מטבח תאילנדי",
@@ -841,4 +841,4 @@
       }
     ]
   }
-}
+};
