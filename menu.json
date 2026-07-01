@@ -5,10 +5,12 @@
     "kosher": true,
     "currency": "ILS",
     "currency_symbol": "₪",
-    "source": "Tala Thai Kitchen menu PDF (starters & mains). Page 3 holds 2 desserts and is intentionally not included here.",
+    "source": "Tala Thai Kitchen — soft-opening (הרצה) evening menu prices.",
     "notes": [
-      "Protein add-on for main dishes: chicken +15₪ / beef +18₪ / tofu +18₪ (תוספת חלבון לבחירה)."
-    ]
+      "תפריט הרצה.",
+      "תוספת חלבון לעיקריות: עוף +15₪ / בקר +18₪ / טופו +18₪."
+    ],
+    "soft_opening": true
   },
   "categories": [
     {
@@ -22,7 +24,7 @@
           "name_en": "Papaya Salad (Som Tum)",
           "description_he": "פאפאיה ירוקה, גזר, עגבניות שרי, שום וצ'ילי ברוטב תאילנדי מסורתי. לבחירה: חריף / חריף מאוד.",
           "description_en": "Green papaya, carrot, cherry tomatoes, garlic and chili in a traditional Thai dressing. Choice of: spicy / very spicy.",
-          "price": 54,
+          "price": 44,
           "spicy": true,
           "image": "images/som-tum-papaya-salad.jpg"
         },
@@ -30,9 +32,9 @@
           "id": "pomelo-mango-fish",
           "name_he": "סלט פומלה / מנגו בעונה ודג מטוגן",
           "name_en": "Pomelo / Seasonal Mango Salad with Fried Fish",
-          "description_he": "פומלה טרייה או מנגו בעונה, עשבי תיבול, בצל סגול, קשיו ודג בטמפורה.",
-          "description_en": "Fresh pomelo or seasonal mango, fresh herbs, red onion, cashews and tempura fish.",
-          "price": 68,
+          "description_he": "פומלה טרייה או מנגו בעונה עם עשבי תיבול, בצל אדום, קשיו ודג בטמפורה.",
+          "description_en": "Fresh pomelo or seasonal mango with herbs, red onion, cashew and tempura fish.",
+          "price": 56,
           "spicy": false,
           "image": "images/pomelo-mango-fish-salad.jpg"
         },
@@ -40,9 +42,9 @@
           "id": "nam-tok-beef",
           "name_he": "נאם טוק בקר",
           "name_en": "Nam Tok Beef Salad",
-          "description_he": "פרוסות שייטל צרובות, עשבי תיבול, בצל סגול, צ'ילי קלוי, ליים וסויה. מוגש בליווי סטיקי רייס.",
-          "description_en": "Seared sirloin slices, fresh herbs, red onion, roasted chili, lime and soy. Served with sticky rice.",
-          "price": 74,
+          "description_he": "פרוסות שייטל צרובות עם עשבי תיבול, בצל סגול, צ'ילי קלוי, ליים וסויה. מוגש עם אורז דביק.",
+          "description_en": "Seared sirloin slices with herbs, red onion, roasted chili, lime and soy. Served with sticky rice.",
+          "price": 50,
           "spicy": true,
           "image": "images/nam-tok-beef.jpg"
         },
@@ -50,9 +52,9 @@
           "id": "thai-spring-roll",
           "name_he": "אגרול תאילנדי",
           "name_en": "Thai Spring Rolls",
-          "description_he": "רול פריך במילוי כרוב, גזר, סלרי, נבטים ואטריות זכוכית. בליווי רוטב חמוץ-מתוק.",
+          "description_he": "רול פריך במילוי כרוב, גזר, סלרי, נבטים ואטריות זכוכית. מוגש עם רוטב חמוץ־מתוק.",
           "description_en": "Crispy roll filled with cabbage, carrot, celery, sprouts and glass noodles. Served with sweet-and-sour sauce.",
-          "price": 46,
+          "price": 40,
           "spicy": false,
           "image": "images/thai-spring-rolls.jpg"
         },
@@ -60,8 +62,8 @@
           "id": "miang-kham-salmon",
           "name_he": "מיאנג קאם סלמון נא",
           "name_en": "Miang Kham Raw Salmon",
-          "description_he": "סלמון נא עם בצל ירוק, בצל אדום, אטריות שעועית, עשבי תיבול וליים. בליווי רוטב בוטנים, על מצע חסה אייסברג.",
-          "description_en": "Raw salmon with green onion, red onion, bean noodles, fresh herbs and lime. With peanut sauce, on a bed of iceberg lettuce.",
+          "description_he": "סלמון נא עם בצל ירוק, בצל אדום, אטריות שעועית, עשבי תיבול וליים. רוטב בוטנים בצד, מוגש על עלי חסה אייסברג.",
+          "description_en": "Raw salmon with green onion, red onion, glass noodles, herbs and lime. Peanut sauce on the side, served on iceberg lettuce.",
           "price": 58,
           "spicy": false,
           "image": null
@@ -70,9 +72,9 @@
           "id": "glass-noodle-salad",
           "name_he": "סלט אטריות שעועית",
           "name_en": "Glass Noodle Salad (Yum Woon Sen)",
-          "description_he": "אטריות שעועית, עלי סלרי, נענע, בצל סגול, עגבנייה, גזר ומלפפון, רוטב חריף-חמוץ-מתוק.",
-          "description_en": "Glass (bean) noodles, celery leaves, mint, red onion, tomato, carrot and cucumber, in a spicy-sour-sweet sauce.",
-          "price": 62,
+          "description_he": "אטריות שעועית עם עלי סלרי, נענע, בצל סגול, עגבנייה, גזר ומלפפון ברוטב חריף־מתוק־חמוץ.",
+          "description_en": "Glass noodles with celery leaves, mint, red onion, tomato, carrot and cucumber in a spicy-sweet-sour dressing.",
+          "price": 41,
           "spicy": true,
           "image": "images/glass-noodle-salad.jpg"
         },
@@ -80,9 +82,9 @@
           "id": "chicken-satay",
           "name_he": "צ'יקן סאטה",
           "name_en": "Chicken Satay",
-          "description_he": "ארבעה שיפודי פרגית על מצע עלי חסה, בליווי רוטב בוטנים ובצל מוחמץ בצד.",
-          "description_en": "Four chicken thigh skewers on a bed of lettuce, with peanut sauce and pickled onion on the side.",
-          "price": 58,
+          "description_he": "ארבעה שיפודי פרגית על עלי חסה, מוגשים עם רוטב בוטנים וסלט מוחמץ בצד.",
+          "description_en": "Four chicken thigh skewers on lettuce, served with peanut sauce and pickled salad on the side.",
+          "price": 51,
           "spicy": false,
           "image": "images/chicken-satay.jpg"
         }
@@ -99,9 +101,9 @@
           "id": "pad-thai",
           "name_he": "פאד תאי",
           "name_en": "Pad Thai",
-          "description_he": "אטריות אורז מוקפצות עם ביצה, גזר, כרוב לבן, נבטים, בצל ירוק, בוטנים, צ'ילי יבש גרוס וליים. קיימת אופציה ללא גלוטן.",
-          "description_en": "Stir-fried rice noodles with egg, carrot, white cabbage, sprouts, green onion, peanuts, ground dried chili and lime. Gluten-free option available.",
-          "price": 68,
+          "description_he": "אטריות אורז מוקפצות עם ביצה, גזר, כרוב לבן, נבטים, בצל ירוק, בוטנים, צ'ילי יבש גרוס וליים. אפשר ללא גלוטן.",
+          "description_en": "Stir-fried rice noodles with egg, carrot, white cabbage, sprouts, green onion, peanuts, ground dried chili and lime. Gluten-free available.",
+          "price": 58,
           "spicy": false,
           "gluten_free_option": true,
           "image": "images/pad-thai.jpg"
@@ -110,9 +112,9 @@
           "id": "pad-krapow",
           "name_he": "פאד קפאו",
           "name_en": "Pad Krapow",
-          "description_he": "בשר טחון מוקפץ עם בזיליקום תאילנדי, בצל סגול, שעועית ירוקה, שום וצ'ילי. בליווי אורז יסמין וביצת עין.",
+          "description_he": "בשר טחון מוקפץ עם בזיליקום תאילנדי, בצל סגול, שעועית ירוקה, שום וצ'ילי. מוגש עם אורז יסמין וביצת עין.",
           "description_en": "Stir-fried minced meat with Thai basil, red onion, green beans, garlic and chili. Served with jasmine rice and a fried egg.",
-          "price": 84,
+          "price": 60,
           "spicy": true,
           "image": "images/pad-krapow.jpg"
         },
@@ -120,9 +122,9 @@
           "id": "cashew-stir-fry",
           "name_he": "מוקפץ קשיו",
           "name_en": "Cashew Stir-Fry",
-          "description_he": "פלפלים צבעוניים, בצל לבן, בצל ירוק, שום וקשיו קלוי, ברוטב חמוץ-מתוק.",
-          "description_en": "Bell peppers, white onion, green onion, garlic and roasted cashews, in a sweet-and-sour sauce.",
-          "price": 78,
+          "description_he": "פלפלים צבעוניים, בצל לבן, בצל ירוק, שום וקשיו קלוי ברוטב חמוץ־מתוק.",
+          "description_en": "Bell peppers, white onion, green onion, garlic and roasted cashews in a sweet-and-sour sauce.",
+          "price": 59,
           "spicy": false,
           "image": "images/cashew-stir-fry.jpg"
         },
@@ -131,18 +133,18 @@
           "name_he": "קארי ירוק",
           "name_en": "Green Curry",
           "description_he": "חלב קוקוס, חציל תאילנדי, בזיליקום ועשבי תיבול.",
-          "description_en": "Coconut milk, Thai eggplant, basil and fresh herbs.",
-          "price": 74,
+          "description_en": "Coconut milk, Thai eggplant, basil and herbs.",
+          "price": 61,
           "spicy": true,
           "image": null
         },
         {
           "id": "red-curry",
-          "name_he": "קארי אדום",
-          "name_en": "Red Curry",
-          "description_he": "קארי תאילנדי אדום, חלב קוקוס, ירקות טריים.",
-          "description_en": "Thai red curry, coconut milk, fresh vegetables.",
-          "price": 74,
+          "name_he": "קארי אדום (פאננג)",
+          "name_en": "Red Curry (Panang)",
+          "description_he": "קארי תאילנדי אדום עשיר עם חלב קוקוס וירקות טריים.",
+          "description_en": "Rich Thai red curry with coconut milk and fresh vegetables.",
+          "price": 61,
           "spicy": true,
           "image": "images/red-curry.jpg"
         },
@@ -150,9 +152,9 @@
           "id": "khao-pad",
           "name_he": "קאו פאד",
           "name_en": "Khao Pad (Thai Fried Rice)",
-          "description_he": "אורז מוקפץ בסגנון תאילנדי, ירקות, ביצה ובצל ירוק.",
-          "description_en": "Thai-style fried rice, vegetables, egg and green onion.",
-          "price": 66,
+          "description_he": "אורז מוקפץ בסגנון תאילנדי עם ירקות, ביצה ובצל ירוק.",
+          "description_en": "Thai-style fried rice with vegetables, egg and green onion.",
+          "price": 56,
           "spicy": false,
           "image": "images/thai-fried-rice.jpg"
         },
@@ -162,7 +164,7 @@
           "name_en": "Stir-Fried Egg Noodles",
           "description_he": "אטריות ביצים מוקפצות עם כרוב, גזר, פטריות ובצל ירוק ברוטב סויה מתקתק.",
           "description_en": "Stir-fried egg noodles with cabbage, carrot, mushrooms and green onion in sweet soy sauce.",
-          "price": 68,
+          "price": 58,
           "spicy": false,
           "image": null
         },
@@ -170,10 +172,37 @@
           "id": "tom-yam",
           "name_he": "מרק טום יאם",
           "name_en": "Tom Yam Soup",
-          "description_he": "מרק תאילנדי חריף-חמצמץ, למון גראס, פטריות, ליים וצ'ילי.",
-          "description_en": "Spicy-and-sour Thai soup, lemongrass, mushrooms, lime and chili.",
-          "price": 62,
+          "description_he": "מרק תאילנדי חריף־חמצמץ עם למון גראס, פטריות, ליים וצ'ילי.",
+          "description_en": "Spicy-and-sour Thai soup with lemongrass, mushrooms, lime and chili.",
+          "price": 54,
           "spicy": true,
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name_he": "קינוחים",
+      "name_en": "Desserts",
+      "items": [
+        {
+          "id": "mango-sticky-rice",
+          "name_he": "מנגו סטיקי רייס",
+          "name_en": "Mango Sticky Rice",
+          "description_he": "אורז דביק בחלב קוקוס עם מנגו טרי.",
+          "description_en": "Sticky rice in coconut milk with fresh mango.",
+          "price": 44,
+          "spicy": false,
+          "image": null
+        },
+        {
+          "id": "colorful-tapioca",
+          "name_he": "טפיוקה צבעונית עם פירות העונה",
+          "name_en": "Colorful Tapioca with Seasonal Fruit",
+          "description_he": "טפיוקה בשלל צבעים מוגשת בחלב קוקוס עם פירות העונה.",
+          "description_en": "Colorful tapioca served in coconut milk with seasonal fruit.",
+          "price": 41,
+          "spicy": false,
           "image": null
         }
       ]
