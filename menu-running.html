@@ -29,8 +29,8 @@
   .dish .nm{font-weight:700}
   .dish .ing{font-weight:400}
 
-  .pair{display:flex;gap:26px;align-items:flex-start}
-  .pair>div{flex:1;min-width:0}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;break-inside:avoid}
+  .pair>div{min-width:0}
   .dgrp{font-weight:700;margin:10px 0 3px}
   .drow{padding:.5px 0}
   .drow b{font-weight:700}

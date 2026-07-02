@@ -51,6 +51,7 @@
   .dsec h3 .en{display:block;font-family:'Cormorant Garamond',serif;letter-spacing:.26em;color:var(--gold);font-size:11px;font-weight:600;padding-inline-start:.26em}
   .dcols{columns:2;column-gap:34px;margin-top:10px}
   .dgroup{break-inside:avoid;margin-bottom:12px}
+  .dgroup.flow{break-inside:auto}
   .dgrp{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:13.5px;font-weight:700;
     border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:5px;display:flex;justify-content:space-between;align-items:baseline}
   .dgrp .en{font-family:'Cormorant Garamond',serif;letter-spacing:.1em;font-size:10.5px;color:var(--muted);font-weight:600}
@@ -63,8 +64,8 @@
   .cshead{display:flex;gap:12px;color:var(--muted);font-size:10.5px;margin:2px 0 -2px;justify-content:flex-start}
   .cshead span:first-child{flex:1}
   .cshead span{min-width:26px;text-align:center}
-  .pair{display:flex;gap:30px;align-items:flex-start}
-  .pair>.dsec{flex:1;min-width:0;margin-top:14px}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;break-inside:avoid}
+  .pair>.dsec{min-width:0;margin-top:14px}
   .donecol{margin-top:10px}
   .cktl{break-inside:avoid;margin-bottom:8px}
   .cktl .ck-top{display:flex;align-items:baseline;gap:5px}
@@ -99,7 +100,7 @@ function dishHTML(it){
 function priceRow(it){return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div>`}
 function csRow(it){const c=it.chaser!=null?it.chaser:'';const s=it.serve!=null?it.serve:(it.price!=null?it.price:'');return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="cs2"><span>${c}</span><span>${s}</span></span></div>`}
 function cocktailRow(it){return `<div class="cktl"><div class="ck-top"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div><div class="ck-desc">${it.desc}</div></div>`}
-function dgroup(g,type){const head=g.label_he?`<div class="dgrp">${g.label_he}${g.label_en?`<span class="en">${g.label_en}</span>`:''}</div>`:'';const fn=type==='chaser_serve'?csRow:type==='described'?cocktailRow:priceRow;return `<div class="dgroup">${head}${g.items.map(fn).join('')}</div>`}
+function dgroup(g,type){const head=g.label_he?`<div class="dgrp">${g.label_he}${g.label_en?`<span class="en">${g.label_en}</span>`:''}</div>`:'';const fn=type==='chaser_serve'?csRow:type==='described'?cocktailRow:priceRow;const flow=!g.label_he&&g.items.length>8?' flow':'';return `<div class="dgroup${flow}">${head}${g.items.map(fn).join('')}</div>`}
 
 const M=window.MENU;
 let html=`

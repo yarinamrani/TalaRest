@@ -171,6 +171,7 @@
   .dcols{columns:2;column-gap:42px;max-width:860px;margin:18px auto 0}
   @media (max-width:620px){ .dcols{columns:1} }
   .dgroup{break-inside:avoid;margin-bottom:18px}
+  .dgroup.flow{break-inside:auto}
   .dgrp{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:15px;font-weight:700;
     border-bottom:1px solid var(--line);padding-bottom:4px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline}
   .dgrp span{font-family:'Cormorant Garamond',serif;letter-spacing:.12em;font-size:12px;color:var(--muted);font-weight:600}
@@ -208,9 +209,15 @@
     .card{box-shadow:none;border:1px solid #e3d8c2}
     footer{background:#fff;color:#555}
     footer .gold{color:var(--gold)}
-    .grid{columns:2;column-gap:12px}
+    .grid{columns:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start}
+    .card{margin-bottom:0}
     .drinks-hero{break-before:page}
-    .dsection{break-inside:avoid}
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;break-inside:avoid;align-items:start}
+    .pair .dsection{break-inside:avoid}
+    .dgroup{break-inside:avoid}
+    .dgroup.flow{break-inside:auto}
+    .cshead{break-after:avoid}
+    .cat-head{break-after:avoid}
   }
 </style>
 </head>
@@ -310,7 +317,8 @@ function drinksGroup(g, type){
   const head = g.label_he ? `<h4 class="dgrp">${g.label_he}${g.label_en?`<span>${g.label_en}</span>`:""}</h4>` : "";
   const rowFn = type==="chaser_serve" ? csRow : type==="described" ? cocktailRow : priceRow;
   const rows = g.items.map(rowFn).join("");
-  return `<div class="dgroup">${head}${rows}</div>`;
+  const flow = !g.label_he && g.items.length>8 ? " flow" : "";
+  return `<div class="dgroup${flow}">${head}${rows}</div>`;
 }
 function sectionHTML(sec){
   return `
