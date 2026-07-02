@@ -69,7 +69,7 @@ const D=M.drinks;
 h+=`<div class="title" style="margin-top:20px">${D.name_he} | ${D.name_en}</div>`;
 for(const sec of D.sections){
   h+=`<div class="cat">${sec.name_he} | ${sec.name_en}</div>`;
-  if(sec.type==='chaser_serve') h+=`<div class="addon">צ׳ייסר / מנה</div>`;
+  if(sec.type==='chaser_serve') h+=`<div class="addon">${(sec.cols_he||['צ׳ייסר','מנה']).join(' / ')}</div>`;
   for(const g of sec.groups){
     if(g.label_he) h+=`<div class="dgrp">${g.label_he}</div>`;
     h+= g.items.map(it=>{
@@ -77,8 +77,9 @@ for(const sec of D.sections){
         return `<div class="dish"><div class="nm">${it.name} - ${it.price}₪</div><div class="ing">${String(it.desc).replace(/\s*,\s*/g,' | ')}</div></div>`;
       }
       if(sec.type==='chaser_serve'){
-        const c=it.chaser!=null?it.chaser:'', s=it.serve!=null?it.serve:'';
-        return `<div class="drow">${it.name} - <b>${c} / ${s}₪</b></div>`;
+        const c=it.chaser, s=it.serve;
+        const pr = c!=null && s!=null ? `${c} / ${s}₪` : `${c??s}₪`;
+        return `<div class="drow">${it.name} - <b>${pr}</b></div>`;
       }
       return `<div class="drow">${it.name} - <b>${it.price}₪</b></div>`;
     }).join('');

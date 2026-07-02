@@ -607,9 +607,9 @@ window.MENU = {
       },
       {
         "id": "wine-glass",
-        "name_he": "יין בכוס",
-        "name_en": "Wine by the Glass",
-        "type": "price",
+        "name_he": "יינות",
+        "name_en": "Wine",
+        "type": "chaser_serve",
         "groups": [
           {
             "label_he": "לבן",
@@ -617,19 +617,23 @@ window.MENU = {
             "items": [
               {
                 "name": "שרדונה וילה קייפ",
-                "price": 49
+                "chaser": 49,
+                "serve": 205
               },
               {
                 "name": "שבלי אלברט בישו",
-                "price": 65
+                "chaser": 65,
+                "serve": 255
               },
               {
                 "name": "גוורץ לה פיאצה",
-                "price": 46
+                "chaser": 46,
+                "serve": 185
               },
               {
                 "name": "סובניון בלאן לה וי",
-                "price": 54
+                "chaser": 54,
+                "serve": 215
               }
             ]
           },
@@ -638,16 +642,14 @@ window.MENU = {
             "label_en": "Red",
             "items": [
               {
-                "name": "לוריא טרסה",
-                "price": 60
-              },
-              {
                 "name": "וילה קייפ קברנה סוביניון",
-                "price": 47
+                "chaser": 47,
+                "serve": 205
               },
               {
                 "name": "קסטל לה וי אדום",
-                "price": 54
+                "chaser": 54,
+                "serve": 210
               }
             ]
           },
@@ -657,11 +659,18 @@ window.MENU = {
             "items": [
               {
                 "name": "וויספרינג אנג'ל רוזה פרובאנס 2023",
-                "price": 61
+                "chaser": 61,
+                "serve": 229
               },
               {
                 "name": "רוזה טי אמו",
-                "price": 54
+                "chaser": 54,
+                "serve": 210
+              },
+              {
+                "name": "רוזה קסטל",
+                "chaser": null,
+                "serve": 246
               }
             ]
           },
@@ -671,94 +680,33 @@ window.MENU = {
             "items": [
               {
                 "name": "קאווה איבריקה יבש",
-                "price": 41
+                "chaser": 41,
+                "serve": 160
+              },
+              {
+                "name": "קאווה בוטגה גולד",
+                "chaser": null,
+                "serve": 249
+              },
+              {
+                "name": "קאווה בוטגה רוז גולד",
+                "chaser": null,
+                "serve": 249
               }
             ]
           }
+        ],
+        "cols_he": [
+          "כוס",
+          "בקבוק"
         ]
       },
       {
         "id": "bottles",
-        "name_he": "בקבוקים",
-        "name_en": "Bottles",
+        "name_he": "בקבוקי אלכוהול",
+        "name_en": "Spirit Bottles",
         "type": "price",
         "groups": [
-          {
-            "label_he": "לבן",
-            "label_en": "White",
-            "items": [
-              {
-                "name": "שרדונה וילה קייפ",
-                "price": 205
-              },
-              {
-                "name": "שבלי אלברט בישו",
-                "price": 255
-              },
-              {
-                "name": "גוורץ לה פיאצה",
-                "price": 185
-              },
-              {
-                "name": "סובניון בלאן לה וי",
-                "price": 215
-              }
-            ]
-          },
-          {
-            "label_he": "אדום",
-            "label_en": "Red",
-            "items": [
-              {
-                "name": "לוריא טרסה",
-                "price": 238
-              },
-              {
-                "name": "וילה קייפ קברנה סוביניון",
-                "price": 205
-              },
-              {
-                "name": "קסטל לה וי אדום",
-                "price": 210
-              }
-            ]
-          },
-          {
-            "label_he": "רוזה",
-            "label_en": "Rosé",
-            "items": [
-              {
-                "name": "וויספרינג אנג'ל רוזה פרובאנס 2023",
-                "price": 229
-              },
-              {
-                "name": "רוזה טי אמו",
-                "price": 210
-              },
-              {
-                "name": "רוזה קסטל",
-                "price": 246
-              }
-            ]
-          },
-          {
-            "label_he": "מבעבע",
-            "label_en": "Sparkling",
-            "items": [
-              {
-                "name": "קאווה בוטגה גולד",
-                "price": 249
-              },
-              {
-                "name": "קאווה בוטגה רוז גולד",
-                "price": 249
-              },
-              {
-                "name": "קאווה איבריקה יבש",
-                "price": 160
-              }
-            ]
-          },
           {
             "label_he": "וודקה",
             "label_en": "Vodka",

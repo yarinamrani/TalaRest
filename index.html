@@ -314,7 +314,7 @@ function drinksHTML(){
   ` + D.sections.map(sec => `
     <section id="${sec.id}" class="dsection">
       <div class="cat-head"><h3>${sec.name_he}<span class="en">${sec.name_en}</span></h3></div>
-      ${sec.type==="chaser_serve" ? `<div class="cshead"><span></span><span>צ׳ייסר</span><span>מנה</span></div>` : ""}
+      ${sec.type==="chaser_serve" ? `<div class="cshead"><span></span><span>${(sec.cols_he||["צ׳ייסר","מנה"])[0]}</span><span>${(sec.cols_he||["צ׳ייסר","מנה"])[1]}</span></div>` : ""}
       <div class="dcols">${sec.groups.map(g=>drinksGroup(g,sec.type)).join("")}</div>
     </section>
   `).join("");
