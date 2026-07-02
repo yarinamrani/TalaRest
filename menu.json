@@ -82,8 +82,8 @@
           "id": "chicken-satay",
           "name_he": "צ'יקן סאטה",
           "name_en": "Chicken Satay",
-          "description_he": "ארבעה שיפודי פרגית על עלי חסה, מוגשים עם רוטב בוטנים וסלט מוחמץ בצד.",
-          "description_en": "Four chicken thigh skewers on lettuce, served with peanut sauce and pickled salad on the side.",
+          "description_he": "שלושה שיפודי פרגית על עלי חסה, מוגשים עם רוטב בוטנים וסלט מוחמץ בצד.",
+          "description_en": "Three chicken thigh skewers on lettuce, served with peanut sauce and pickled salad on the side.",
           "price": 51,
           "spicy": false,
           "image": "images/chicken-satay.jpg"
@@ -211,109 +211,76 @@
   "drinks": {
     "name_he": "תפריט שתייה",
     "name_en": "Drinks",
-    "note_he": "המחירים בש\"ח (₪)",
     "sections": [
       {
-        "id": "cocktails",
-        "name_he": "קוקטיילים",
-        "name_en": "Cocktails",
-        "type": "described",
+        "id": "soft",
+        "name_he": "שתייה קלה",
+        "name_en": "Soft Drinks",
+        "type": "price",
         "groups": [
           {
             "label_he": "",
             "label_en": "",
             "items": [
               {
-                "name": "אריגטו",
-                "desc": "סירופ קיווי ביתי, וויסקי, מי סוכר, אומשו (ליקר שזיפים)",
-                "price": 59
+                "name": "פפסי",
+                "price": 15
               },
               {
-                "name": "ספייסי גיישה",
-                "desc": "טקילה, סאקה מסונן, ליקר יוזו, סירופ יסמין ביתי, סירופ פלפל ביתי",
-                "price": 58
+                "name": "פפסי מקס",
+                "price": 15
               },
               {
-                "name": "נוצה טרופיקל",
-                "desc": "וודקה מושרית היביסקוס, ליצי, אפרול, אשכולית אדומה, לימון, מי ורדים",
-                "price": 61
+                "name": "סבן אפ",
+                "price": 15
               },
               {
-                "name": "שישי",
-                "desc": "יוזומון, אפרול, סירופ פסיפלורה, ביטר למון",
-                "price": 58
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "wine-glass",
-        "name_he": "יין בכוס",
-        "name_en": "Wine by the Glass",
-        "type": "price",
-        "groups": [
-          {
-            "label_he": "לבן",
-            "label_en": "White",
-            "items": [
-              {
-                "name": "שרדונה וילה קייפ",
-                "price": 49
+                "name": "דיאט סבן אפ",
+                "price": 15
               },
               {
-                "name": "שבלי אלברט בישו",
-                "price": 65
+                "name": "פרייה",
+                "price": 14
               },
               {
-                "name": "גוורץ לה פיאצה",
-                "price": 46
+                "name": "סן בנדטו פלסטיק",
+                "price": 13
               },
               {
-                "name": "סובניון בלאן לה וי",
-                "price": 54
-              }
-            ]
-          },
-          {
-            "label_he": "אדום",
-            "label_en": "Red",
-            "items": [
-              {
-                "name": "לוריא טרסה",
-                "price": 60
+                "name": "סן פלגרינו 750 מל",
+                "price": 26
               },
               {
-                "name": "וילה קייפ קברנה סוביניון",
-                "price": 47
+                "name": "ענבים",
+                "price": 14
               },
               {
-                "name": "קסטל לה וי אדום",
-                "price": 54
-              }
-            ]
-          },
-          {
-            "label_he": "רוזה",
-            "label_en": "Rosé",
-            "items": [
-              {
-                "name": "וויספרינג אנג'ל רוזה פרובאנס 2023",
-                "price": 61
+                "name": "מים בטעמים",
+                "price": 14
               },
               {
-                "name": "רוזה טי אמו",
-                "price": 54
-              }
-            ]
-          },
-          {
-            "label_he": "מבעבע",
-            "label_en": "Sparkling",
-            "items": [
+                "name": "תפוזים/לימונדה",
+                "price": 14
+              },
               {
-                "name": "קאווה איבריקה יבש",
-                "price": 41
+                "name": "XL משקה אנרגיה",
+                "price": 16
+              },
+              {
+                "name": "תוספת ערבוב למשקה (לימונדה/חמוציות/טוניק/ראשן)",
+                "price": 8
+              },
+              {
+                "name": "תוספת ערבוב למשקה - משקה אנרגיה",
+                "price": 16
+              },
+              {
+                "name": "פיוזטי אפרסק",
+                "price": 15
+              },
+              {
+                "name": "מים מינרלים",
+                "price": 13
               }
             ]
           }
@@ -348,6 +315,40 @@
               {
                 "name": "גולדסטאר — בקבוק",
                 "price": 32
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cocktails",
+        "name_he": "קוקטיילים",
+        "name_en": "Cocktails",
+        "type": "described",
+        "groups": [
+          {
+            "label_he": "",
+            "label_en": "",
+            "items": [
+              {
+                "name": "אריגטו",
+                "desc": "סירופ קיווי ביתי, וויסקי, מי סוכר, אומשו (ליקר שזיפים)",
+                "price": 59
+              },
+              {
+                "name": "ספייסי גיישה",
+                "desc": "טקילה, סאקה מסונן, ליקר יוזו, סירופ יסמין ביתי, סירופ פלפל ביתי",
+                "price": 58
+              },
+              {
+                "name": "נוצה טרופיקל",
+                "desc": "וודקה מושרית היביסקוס, ליצי, אפרול, אשכולית אדומה, לימון, מי ורדים",
+                "price": 61
+              },
+              {
+                "name": "שישי",
+                "desc": "יוזומון, אפרול, סירופ פסיפלורה, ביטר למון",
+                "price": 58
               }
             ]
           }
@@ -599,6 +600,78 @@
                 "name": "טריפל סק קאנטרו",
                 "chaser": 32,
                 "serve": 54
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wine-glass",
+        "name_he": "יין בכוס",
+        "name_en": "Wine by the Glass",
+        "type": "price",
+        "groups": [
+          {
+            "label_he": "לבן",
+            "label_en": "White",
+            "items": [
+              {
+                "name": "שרדונה וילה קייפ",
+                "price": 49
+              },
+              {
+                "name": "שבלי אלברט בישו",
+                "price": 65
+              },
+              {
+                "name": "גוורץ לה פיאצה",
+                "price": 46
+              },
+              {
+                "name": "סובניון בלאן לה וי",
+                "price": 54
+              }
+            ]
+          },
+          {
+            "label_he": "אדום",
+            "label_en": "Red",
+            "items": [
+              {
+                "name": "לוריא טרסה",
+                "price": 60
+              },
+              {
+                "name": "וילה קייפ קברנה סוביניון",
+                "price": 47
+              },
+              {
+                "name": "קסטל לה וי אדום",
+                "price": 54
+              }
+            ]
+          },
+          {
+            "label_he": "רוזה",
+            "label_en": "Rosé",
+            "items": [
+              {
+                "name": "וויספרינג אנג'ל רוזה פרובאנס 2023",
+                "price": 61
+              },
+              {
+                "name": "רוזה טי אמו",
+                "price": 54
+              }
+            ]
+          },
+          {
+            "label_he": "מבעבע",
+            "label_en": "Sparkling",
+            "items": [
+              {
+                "name": "קאווה איבריקה יבש",
+                "price": 41
               }
             ]
           }
@@ -857,80 +930,6 @@
               {
                 "name": "לימונצ'לו",
                 "price": 550
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "soft",
-        "name_he": "שתייה קלה",
-        "name_en": "Soft Drinks",
-        "type": "price",
-        "groups": [
-          {
-            "label_he": "",
-            "label_en": "",
-            "items": [
-              {
-                "name": "פפסי",
-                "price": 15
-              },
-              {
-                "name": "פפסי מקס",
-                "price": 15
-              },
-              {
-                "name": "סבן אפ",
-                "price": 15
-              },
-              {
-                "name": "דיאט סבן אפ",
-                "price": 15
-              },
-              {
-                "name": "פרייה",
-                "price": 14
-              },
-              {
-                "name": "סן בנדטו פלסטיק",
-                "price": 13
-              },
-              {
-                "name": "סן פלגרינו 750 מל",
-                "price": 26
-              },
-              {
-                "name": "ענבים",
-                "price": 14
-              },
-              {
-                "name": "מים בטעמים",
-                "price": 14
-              },
-              {
-                "name": "תפוזים/לימונדה",
-                "price": 14
-              },
-              {
-                "name": "XL משקה אנרגיה",
-                "price": 16
-              },
-              {
-                "name": "תוספת ערבוב למשקה (לימונדה/חמוציות/טוניק/ראשן)",
-                "price": 8
-              },
-              {
-                "name": "תוספת ערבוב למשקה - משקה אנרגיה",
-                "price": 16
-              },
-              {
-                "name": "פיוזטי אפרסק",
-                "price": 15
-              },
-              {
-                "name": "מים מינרלים",
-                "price": 13
               }
             ]
           }
