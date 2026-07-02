@@ -73,6 +73,9 @@ for(const sec of D.sections){
   for(const g of sec.groups){
     if(g.label_he) h+=`<div class="dgrp">${g.label_he}</div>`;
     h+= g.items.map(it=>{
+      if(sec.type==='described'){
+        return `<div class="dish"><div class="nm">${it.name} - ${it.price}₪</div><div class="ing">${String(it.desc).replace(/\s*,\s*/g,' | ')}</div></div>`;
+      }
       if(sec.type==='chaser_serve'){
         const c=it.chaser!=null?it.chaser:'', s=it.serve!=null?it.serve:'';
         return `<div class="drow">${it.name} - <b>${c} / ${s}₪</b></div>`;

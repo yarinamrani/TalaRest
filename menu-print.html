@@ -63,6 +63,10 @@
   .cshead{display:flex;gap:12px;color:var(--muted);font-size:10.5px;margin:2px 0 -2px;justify-content:flex-start}
   .cshead span:first-child{flex:1}
   .cshead span{min-width:26px;text-align:center}
+  .cktl{break-inside:avoid;margin-bottom:8px}
+  .cktl .ck-top{display:flex;align-items:baseline;gap:5px}
+  .cktl .ck-top .dname{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:14px;color:var(--navy)}
+  .cktl .ck-desc{color:var(--muted);font-size:12px;margin-top:1px}
 
   footer{text-align:center;color:var(--muted);font-size:11.5px;margin:22px 0 12px;padding-top:12px;border-top:1px solid var(--line)}
   footer .gold{font-family:'Cormorant Garamond',serif;color:var(--gold);letter-spacing:.3em;font-size:15px}
@@ -91,7 +95,8 @@ function dishHTML(it){
 }
 function priceRow(it){return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div>`}
 function csRow(it){const c=it.chaser!=null?it.chaser:'';const s=it.serve!=null?it.serve:(it.price!=null?it.price:'');return `<div class="dline"><span class="dname">${it.name}</span><span class="ddot"></span><span class="cs2"><span>${c}</span><span>${s}</span></span></div>`}
-function dgroup(g,type){const head=g.label_he?`<div class="dgrp">${g.label_he}${g.label_en?`<span class="en">${g.label_en}</span>`:''}</div>`:'';return `<div class="dgroup">${head}${g.items.map(type==='chaser_serve'?csRow:priceRow).join('')}</div>`}
+function cocktailRow(it){return `<div class="cktl"><div class="ck-top"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div><div class="ck-desc">${it.desc}</div></div>`}
+function dgroup(g,type){const head=g.label_he?`<div class="dgrp">${g.label_he}${g.label_en?`<span class="en">${g.label_en}</span>`:''}</div>`:'';const fn=type==='chaser_serve'?csRow:type==='described'?cocktailRow:priceRow;return `<div class="dgroup">${head}${g.items.map(fn).join('')}</div>`}
 
 const M=window.MENU;
 let html=`

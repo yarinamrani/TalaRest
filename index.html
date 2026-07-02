@@ -184,6 +184,10 @@
     color:var(--muted);font-size:12px;font-weight:500}
   .cshead span:first-child{flex:1}
   .cshead span{min-width:30px;text-align:center}
+  .cocktail{break-inside:avoid;margin-bottom:12px}
+  .cocktail .crow{display:flex;align-items:baseline;gap:6px}
+  .cocktail .crow .dname{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:16px;color:var(--navy)}
+  .cocktail .cdesc{color:var(--muted);font-size:13.5px;font-weight:300;margin-top:1px}
 
   /* ---------- Print ---------- */
   @media print{
@@ -223,6 +227,7 @@
   <div class="nav-inner">
     <a href="#starters">ראשונות</a>
     <a href="#mains">עיקריות</a>
+    <a href="#cocktails">קוקטיילים</a>
     <a href="#wine-glass">יין</a>
     <a href="#beer">בירות</a>
     <a href="#spirits">שתייה חריפה</a>
@@ -292,9 +297,13 @@ function csRow(it){
   const s = it.serve!=null ? it.serve : (it.price!=null?it.price:"");
   return `<div class="dline cs"><span class="dname">${it.name}</span><span class="ddot"></span><span class="cs2"><span>${c}</span><span>${s}</span></span></div>`;
 }
+function cocktailRow(it){
+  return `<div class="cocktail"><div class="crow"><span class="dname">${it.name}</span><span class="ddot"></span><span class="dprice">${it.price}</span></div><div class="cdesc">${it.desc}</div></div>`;
+}
 function drinksGroup(g, type){
   const head = g.label_he ? `<h4 class="dgrp">${g.label_he}${g.label_en?`<span>${g.label_en}</span>`:""}</h4>` : "";
-  const rows = g.items.map(type==="chaser_serve"?csRow:priceRow).join("");
+  const rowFn = type==="chaser_serve" ? csRow : type==="described" ? cocktailRow : priceRow;
+  const rows = g.items.map(rowFn).join("");
   return `<div class="dgroup">${head}${rows}</div>`;
 }
 function drinksHTML(){
