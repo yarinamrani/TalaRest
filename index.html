@@ -184,6 +184,11 @@
     color:var(--muted);font-size:12px;font-weight:500}
   .cshead span:first-child{flex:1}
   .cshead span{min-width:30px;text-align:center}
+  .pair{display:flex;gap:44px;align-items:flex-start;max-width:1000px;margin:0 auto}
+  .pair>section{flex:1;min-width:0}
+  .pair .dcols{columns:1;max-width:none}
+  .pair .cshead{max-width:none}
+  @media (max-width:760px){ .pair{flex-direction:column;gap:0} }
   .cocktail{break-inside:avoid;margin-bottom:12px}
   .cocktail .crow{display:flex;align-items:baseline;gap:6px}
   .cocktail .crow .dname{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:16px;color:var(--navy)}
@@ -307,17 +312,29 @@ function drinksGroup(g, type){
   const rows = g.items.map(rowFn).join("");
   return `<div class="dgroup">${head}${rows}</div>`;
 }
-function drinksHTML(){
-  const D = MENU.drinks; if(!D) return "";
+function sectionHTML(sec){
   return `
-  <div class="drinks-hero"><h2>${D.name_he}<span class="en">${D.name_en}</span></h2></div>
-  ` + D.sections.map(sec => `
     <section id="${sec.id}" class="dsection">
       <div class="cat-head"><h3>${sec.name_he}<span class="en">${sec.name_en}</span></h3></div>
       ${sec.type==="chaser_serve" ? `<div class="cshead"><span></span><span>${(sec.cols_he||["צ׳ייסר","מנה"])[0]}</span><span>${(sec.cols_he||["צ׳ייסר","מנה"])[1]}</span></div>` : ""}
       <div class="dcols">${sec.groups.map(g=>drinksGroup(g,sec.type)).join("")}</div>
-    </section>
-  `).join("");
+    </section>`;
+}
+function drinksHTML(){
+  const D = MENU.drinks; if(!D) return "";
+  let out = `
+  <div class="drinks-hero"><h2>${D.name_he}<span class="en">${D.name_en}</span></h2></div>
+  `;
+  const wine = D.sections.find(s=>s.id==="wine-glass");
+  for(const sec of D.sections){
+    if(wine && sec.id==="wine-glass") continue;
+    if(wine && sec.id==="cocktails"){
+      out += `<div class="pair">${sectionHTML(sec)}${sectionHTML(wine)}</div>`;
+      continue;
+    }
+    out += sectionHTML(sec);
+  }
+  return out;
 }
 render();
 </script>

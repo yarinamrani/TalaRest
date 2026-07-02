@@ -63,6 +63,9 @@
   .cshead{display:flex;gap:12px;color:var(--muted);font-size:10.5px;margin:2px 0 -2px;justify-content:flex-start}
   .cshead span:first-child{flex:1}
   .cshead span{min-width:26px;text-align:center}
+  .pair{display:flex;gap:30px;align-items:flex-start}
+  .pair>.dsec{flex:1;min-width:0;margin-top:14px}
+  .donecol{margin-top:10px}
   .cktl{break-inside:avoid;margin-bottom:8px}
   .cktl .ck-top{display:flex;align-items:baseline;gap:5px}
   .cktl .ck-top .dname{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:14px;color:var(--navy)}
@@ -115,10 +118,17 @@ for(const cat of M.categories){
 
 const D=M.drinks;
 html+=`<div class="drinks-title"><h2 class="cat">${D.name_he}<span class="en">${D.name_en}</span></h2></div>`;
+function secHTML(sec,inPair){
+  let s=`<div class="dsec"><h3>${sec.name_he}<span class="en">${sec.name_en}</span></h3>`;
+  if(sec.type==='chaser_serve') s+=`<div class="cshead"><span></span><span>${(sec.cols_he||['צ׳ייסר','מנה'])[0]}</span><span>${(sec.cols_he||['צ׳ייסר','מנה'])[1]}</span></div>`;
+  s+=`<div class="${inPair?'donecol':'dcols'}">${sec.groups.map(g=>dgroup(g,sec.type)).join('')}</div></div>`;
+  return s;
+}
+const wineSec=D.sections.find(s=>s.id==='wine-glass');
 for(const sec of D.sections){
-  html+=`<div class="dsec"><h3>${sec.name_he}<span class="en">${sec.name_en}</span></h3>`;
-  if(sec.type==='chaser_serve') html+=`<div class="cshead"><span></span><span>${(sec.cols_he||['צ׳ייסר','מנה'])[0]}</span><span>${(sec.cols_he||['צ׳ייסר','מנה'])[1]}</span></div>`;
-  html+=`<div class="dcols">${sec.groups.map(g=>dgroup(g,sec.type)).join('')}</div></div>`;
+  if(wineSec && sec.id==='wine-glass') continue;
+  if(wineSec && sec.id==='cocktails'){ html+=`<div class="pair">${secHTML(sec,true)}${secHTML(wineSec,true)}</div>`; continue; }
+  html+=secHTML(sec,false);
 }
 
 html+=`<footer><div class="gold">TALA</div>כשר</footer>`;
